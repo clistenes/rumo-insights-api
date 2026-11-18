@@ -1,0 +1,808 @@
+{
+  "instrumento": {
+    "id": "copsoq-ii-br-curto",
+    "nome": "COPSOQ II-Br — versão curta",
+    "versao_arquivo": "1.0.0",
+    "idioma": "pt-BR",
+    "fonte": "Versão brasileira curta do COPSOQ II (validação brasileira, UFSCar, 2019). Conferir o texto de cada item contra a publicação oficial antes de usar com clientes.",
+    "cortes_de_referencia": "Manual COPSOQ II — Versão Portuguesa: tercis 2,33 e 3,66 na escala 1–5, equivalentes a 33,33 e 66,67 na escala 0–100.",
+    "total_itens": 40,
+    "total_dimensoes": 23
+  },
+  "escala_resultado": {
+    "minimo": 0,
+    "maximo": 100,
+    "casas_decimais": 2
+  },
+  "escalas": {
+    "frequencia": {
+      "opcoes": [
+        {
+          "rotulo": "Sempre",
+          "valor": 4
+        },
+        {
+          "rotulo": "Frequentemente",
+          "valor": 3
+        },
+        {
+          "rotulo": "Às vezes",
+          "valor": 2
+        },
+        {
+          "rotulo": "Raramente",
+          "valor": 1
+        },
+        {
+          "rotulo": "Nunca",
+          "valor": 0
+        }
+      ],
+      "valor_maximo": 4,
+      "valor_minimo": 0
+    },
+    "frequencia_invertida": {
+      "opcoes": [
+        {
+          "rotulo": "Sempre",
+          "valor": 0
+        },
+        {
+          "rotulo": "Frequentemente",
+          "valor": 1
+        },
+        {
+          "rotulo": "Às vezes",
+          "valor": 2
+        },
+        {
+          "rotulo": "Raramente",
+          "valor": 3
+        },
+        {
+          "rotulo": "Nunca",
+          "valor": 4
+        }
+      ],
+      "valor_maximo": 4,
+      "valor_minimo": 0
+    },
+    "grau": {
+      "opcoes": [
+        {
+          "rotulo": "Em grande parte",
+          "valor": 4
+        },
+        {
+          "rotulo": "Em boa parte",
+          "valor": 3
+        },
+        {
+          "rotulo": "De certa forma",
+          "valor": 2
+        },
+        {
+          "rotulo": "Pouco",
+          "valor": 1
+        },
+        {
+          "rotulo": "Muito pouco",
+          "valor": 0
+        }
+      ],
+      "valor_maximo": 4,
+      "valor_minimo": 0
+    },
+    "satisfacao": {
+      "opcoes": [
+        {
+          "rotulo": "Muito satisfeito",
+          "valor": 3
+        },
+        {
+          "rotulo": "Satisfeito",
+          "valor": 2
+        },
+        {
+          "rotulo": "Insatisfeito",
+          "valor": 1
+        },
+        {
+          "rotulo": "Muito insatisfeito",
+          "valor": 0
+        }
+      ],
+      "valor_maximo": 3,
+      "valor_minimo": 0
+    },
+    "conflito": {
+      "opcoes": [
+        {
+          "rotulo": "Sim, com certeza",
+          "valor": 3
+        },
+        {
+          "rotulo": "Sim, até certo ponto",
+          "valor": 2
+        },
+        {
+          "rotulo": "Sim, mas muito pouco",
+          "valor": 1
+        },
+        {
+          "rotulo": "Não, realmente não",
+          "valor": 0
+        }
+      ],
+      "valor_maximo": 3,
+      "valor_minimo": 0
+    },
+    "saude": {
+      "opcoes": [
+        {
+          "rotulo": "Excelente",
+          "valor": 4
+        },
+        {
+          "rotulo": "Muito boa",
+          "valor": 3
+        },
+        {
+          "rotulo": "Boa",
+          "valor": 2
+        },
+        {
+          "rotulo": "Razoável",
+          "valor": 1
+        },
+        {
+          "rotulo": "Ruim",
+          "valor": 0
+        }
+      ],
+      "valor_maximo": 4,
+      "valor_minimo": 0
+    },
+    "exposicao": {
+      "opcoes": [
+        {
+          "rotulo": "Sim, diariamente",
+          "valor": 4
+        },
+        {
+          "rotulo": "Sim, semanalmente",
+          "valor": 3
+        },
+        {
+          "rotulo": "Sim, mensalmente",
+          "valor": 2
+        },
+        {
+          "rotulo": "Sim, poucas vezes",
+          "valor": 1
+        },
+        {
+          "rotulo": "Não",
+          "valor": 0
+        }
+      ],
+      "valor_maximo": 4,
+      "valor_minimo": 0
+    }
+  },
+  "itens": [
+    {
+      "id": "1A",
+      "texto": "Você atrasa a entrega do seu trabalho?",
+      "escala": "frequencia",
+      "valor_maximo": 4,
+      "texto_antes": "Por favor, escolha a resposta que mais descreve seu ambiente psicossocial de trabalho."
+    },
+    {
+      "id": "1B",
+      "texto": "O tempo para realizar as suas tarefas no trabalho é suficiente?",
+      "escala": "frequencia_invertida",
+      "valor_maximo": 4
+    },
+    {
+      "id": "2A",
+      "texto": "É necessário manter um ritmo acelerado no trabalho?",
+      "escala": "frequencia",
+      "valor_maximo": 4
+    },
+    {
+      "id": "2B",
+      "texto": "Você trabalha em ritmo acelerado ao longo de toda jornada?",
+      "escala": "frequencia",
+      "valor_maximo": 4
+    },
+    {
+      "id": "3A",
+      "texto": "Seu trabalho coloca você em situações emocionalmente desgastantes?",
+      "escala": "frequencia",
+      "valor_maximo": 4
+    },
+    {
+      "id": "3B",
+      "texto": "Você tem que lidar com os problemas pessoais de outras pessoas como parte do seu trabalho?",
+      "escala": "frequencia",
+      "valor_maximo": 4
+    },
+    {
+      "id": "4A",
+      "texto": "Você tem um alto grau de influência nas decisões sobre o seu trabalho?",
+      "escala": "frequencia",
+      "valor_maximo": 4
+    },
+    {
+      "id": "4B",
+      "texto": "Você pode interferir na quantidade de trabalho atribuída a você?",
+      "escala": "frequencia",
+      "valor_maximo": 4
+    },
+    {
+      "id": "5A",
+      "texto": "Você tem a possibilidade de aprender coisas novas através do seu trabalho?",
+      "escala": "grau",
+      "valor_maximo": 4
+    },
+    {
+      "id": "5B",
+      "texto": "O seu trabalho exige que você tome iniciativas?",
+      "escala": "grau",
+      "valor_maximo": 4
+    },
+    {
+      "id": "6A",
+      "texto": "O seu trabalho é significativo?",
+      "escala": "grau",
+      "valor_maximo": 4
+    },
+    {
+      "id": "6B",
+      "texto": "Você sente que o trabalho que você faz é importante?",
+      "escala": "grau",
+      "valor_maximo": 4
+    },
+    {
+      "id": "7A",
+      "texto": "Você sente que o seu local de trabalho é muito importante para você?",
+      "escala": "grau",
+      "valor_maximo": 4
+    },
+    {
+      "id": "7B",
+      "texto": "Você recomendaria a um amigo que se candidatasse a uma vaga no seu local de trabalho?",
+      "escala": "grau",
+      "valor_maximo": 4
+    },
+    {
+      "id": "8A",
+      "texto": "No seu local de trabalho, você é informado antecipadamente sobre decisões importantes, mudanças ou planos para o futuro?",
+      "escala": "grau",
+      "valor_maximo": 4
+    },
+    {
+      "id": "8B",
+      "texto": "Você recebe toda a informação necessária para fazer bem o seu trabalho?",
+      "escala": "grau",
+      "valor_maximo": 4
+    },
+    {
+      "id": "9A",
+      "texto": "O seu trabalho é reconhecido e valorizado pelos seus superiores?",
+      "escala": "grau",
+      "valor_maximo": 4
+    },
+    {
+      "id": "9B",
+      "texto": "Você é tratado de forma justa no seu local de trabalho?",
+      "escala": "grau",
+      "valor_maximo": 4
+    },
+    {
+      "id": "10A",
+      "texto": "O seu trabalho tem objetivos/metas claros(as)?",
+      "escala": "grau",
+      "valor_maximo": 4
+    },
+    {
+      "id": "10B",
+      "texto": "Você sabe exatamente o que se espera de você no trabalho?",
+      "escala": "grau",
+      "valor_maximo": 4
+    },
+    {
+      "id": "11A",
+      "texto": "Você diria que o seu superior imediato dá alta prioridade para a satisfação com trabalho?",
+      "escala": "grau",
+      "valor_maximo": 4
+    },
+    {
+      "id": "11B",
+      "texto": "Você diria que o seu superior imediato é bom no planejamento do trabalho?",
+      "escala": "grau",
+      "valor_maximo": 4
+    },
+    {
+      "id": "12A",
+      "texto": "Com que frequência o seu superior imediato está disposto a ouvir os seus problemas no trabalho?",
+      "escala": "frequencia",
+      "valor_maximo": 4
+    },
+    {
+      "id": "12B",
+      "texto": "Com que frequência você recebe ajuda e suporte do seu superior imediato?",
+      "escala": "frequencia",
+      "valor_maximo": 4
+    },
+    {
+      "id": "13",
+      "texto": "Qual o seu nível de satisfação com o seu trabalho como um todo, considerando todos os aspectos?",
+      "escala": "satisfacao",
+      "valor_maximo": 3
+    },
+    {
+      "id": "14A",
+      "texto": "Você sente que o seu trabalho consome tanto sua energia que ele tem um efeito negativo na sua vida particular?",
+      "escala": "conflito",
+      "valor_maximo": 3,
+      "texto_antes": "As próximas duas perguntas são sobre a forma como o seu trabalho afeta a sua vida particular e familiar."
+    },
+    {
+      "id": "14B",
+      "texto": "Você sente que o seu trabalho ocupa tanto tempo que ele tem um efeito negativo na sua vida particular?",
+      "escala": "conflito",
+      "valor_maximo": 3
+    },
+    {
+      "id": "15A",
+      "texto": "Você pode confiar nas informações que vêm dos seus superiores?",
+      "escala": "grau",
+      "valor_maximo": 4,
+      "texto_antes": "As próximas quatro perguntas não são sobre o seu próprio trabalho, mas sobre a empresa em que você trabalha."
+    },
+    {
+      "id": "15B",
+      "texto": "Os seus superiores confiam que os funcionários farão bem seu trabalho?",
+      "escala": "grau",
+      "valor_maximo": 4
+    },
+    {
+      "id": "16A",
+      "texto": "Os conflitos são resolvidos de forma justa?",
+      "escala": "grau",
+      "valor_maximo": 4
+    },
+    {
+      "id": "16B",
+      "texto": "O trabalho é distribuído de forma justa?",
+      "escala": "grau",
+      "valor_maximo": 4
+    },
+    {
+      "id": "17",
+      "texto": "Em geral, você diria que a sua saúde é:",
+      "escala": "saude",
+      "valor_maximo": 4,
+      "texto_antes": "As próximas cinco perguntas são sobre a sua própria saúde e bem-estar. Por favor, tente não distinguir entre sintomas que são causados pelo trabalho e sintomas que se devem a outras causas. Descreva como você está no geral. As perguntas são sobre a sua saúde e bem-estar nas últimas quatro semanas:"
+    },
+    {
+      "id": "18A",
+      "texto": "Com que frequência você tem se sentido fisicamente esgotado?",
+      "escala": "frequencia",
+      "valor_maximo": 4
+    },
+    {
+      "id": "18B",
+      "texto": "Com que frequência você tem se sentido emocionalmente esgotado?",
+      "escala": "frequencia",
+      "valor_maximo": 4
+    },
+    {
+      "id": "19A",
+      "texto": "Com que frequência você tem se sentido estressado?",
+      "escala": "frequencia",
+      "valor_maximo": 4
+    },
+    {
+      "id": "19B",
+      "texto": "Com que frequência você tem se sentido irritado?",
+      "escala": "frequencia",
+      "valor_maximo": 4
+    },
+    {
+      "id": "20",
+      "texto": "Você foi exposto a atenção sexual indesejada no seu local de trabalho durante os últimos 12 meses?",
+      "escala": "exposicao",
+      "valor_maximo": 4,
+      "origens": [
+        "Colegas",
+        "Gerente, supervisor",
+        "Subordinados",
+        "Clientes, fregueses, pacientes"
+      ],
+      "pergunta_origem": "De quem?"
+    },
+    {
+      "id": "21",
+      "texto": "Você foi exposto a ameaças de violência no seu local de trabalho nos últimos 12 meses?",
+      "escala": "exposicao",
+      "valor_maximo": 4,
+      "origens": [
+        "Colegas",
+        "Gerente, supervisor",
+        "Subordinados",
+        "Clientes, fregueses, pacientes"
+      ],
+      "pergunta_origem": "De quem?"
+    },
+    {
+      "id": "22",
+      "texto": "Você foi exposto a violência física em seu local de trabalho durante os últimos 12 meses?",
+      "escala": "exposicao",
+      "valor_maximo": 4,
+      "origens": [
+        "Colegas",
+        "Gerente, supervisor",
+        "Subordinados",
+        "Clientes, fregueses, pacientes"
+      ],
+      "pergunta_origem": "De quem?"
+    },
+    {
+      "id": "23",
+      "texto": "Você foi exposto a “bullying” no seu local de trabalho nos últimos 12 meses?",
+      "escala": "exposicao",
+      "valor_maximo": 4,
+      "texto_antes": "“Bullying” significa que uma pessoa é repetidamente exposta a tratamento desagradável ou degradante, do qual a vítima tem dificuldade para se defender.",
+      "origens": [
+        "Colegas",
+        "Gerente, supervisor",
+        "Subordinados",
+        "Clientes, fregueses, pacientes"
+      ],
+      "pergunta_origem": "De quem?"
+    }
+  ],
+  "dimensoes": [
+    {
+      "id": "D01",
+      "nome": "Demandas quantitativas",
+      "itens": [
+        "1A",
+        "1B"
+      ],
+      "direcao": "risco"
+    },
+    {
+      "id": "D02",
+      "nome": "Ritmo de trabalho",
+      "itens": [
+        "2A",
+        "2B"
+      ],
+      "direcao": "risco"
+    },
+    {
+      "id": "D03",
+      "nome": "Demandas emocionais",
+      "itens": [
+        "3A",
+        "3B"
+      ],
+      "direcao": "risco"
+    },
+    {
+      "id": "D04",
+      "nome": "Influência no trabalho",
+      "itens": [
+        "4A",
+        "4B"
+      ],
+      "direcao": "protecao"
+    },
+    {
+      "id": "D05",
+      "nome": "Possibilidades de desenvolvimento",
+      "itens": [
+        "5A",
+        "5B"
+      ],
+      "direcao": "protecao"
+    },
+    {
+      "id": "D06",
+      "nome": "Significado do trabalho",
+      "itens": [
+        "6A",
+        "6B"
+      ],
+      "direcao": "protecao"
+    },
+    {
+      "id": "D07",
+      "nome": "Compromisso com o local de trabalho",
+      "itens": [
+        "7A",
+        "7B"
+      ],
+      "direcao": "protecao"
+    },
+    {
+      "id": "D08",
+      "nome": "Previsibilidade",
+      "itens": [
+        "8A",
+        "8B"
+      ],
+      "direcao": "protecao"
+    },
+    {
+      "id": "D09",
+      "nome": "Reconhecimento",
+      "itens": [
+        "9A",
+        "9B"
+      ],
+      "direcao": "protecao"
+    },
+    {
+      "id": "D10",
+      "nome": "Clareza de papel",
+      "itens": [
+        "10A",
+        "10B"
+      ],
+      "direcao": "protecao"
+    },
+    {
+      "id": "D11",
+      "nome": "Qualidade da liderança",
+      "itens": [
+        "11A",
+        "11B"
+      ],
+      "direcao": "protecao"
+    },
+    {
+      "id": "D12",
+      "nome": "Suporte social do superior",
+      "itens": [
+        "12A",
+        "12B"
+      ],
+      "direcao": "protecao"
+    },
+    {
+      "id": "D13",
+      "nome": "Satisfação no trabalho",
+      "itens": [
+        "13"
+      ],
+      "direcao": "protecao"
+    },
+    {
+      "id": "D14",
+      "nome": "Conflito trabalho-família",
+      "itens": [
+        "14A",
+        "14B"
+      ],
+      "direcao": "risco"
+    },
+    {
+      "id": "D15",
+      "nome": "Confiança na gestão",
+      "itens": [
+        "15A",
+        "15B"
+      ],
+      "direcao": "protecao"
+    },
+    {
+      "id": "D16",
+      "nome": "Justiça",
+      "itens": [
+        "16A",
+        "16B"
+      ],
+      "direcao": "protecao"
+    },
+    {
+      "id": "D17",
+      "nome": "Saúde geral",
+      "itens": [
+        "17"
+      ],
+      "direcao": "protecao"
+    },
+    {
+      "id": "D18",
+      "nome": "Burnout",
+      "itens": [
+        "18A",
+        "18B"
+      ],
+      "direcao": "risco"
+    },
+    {
+      "id": "D19",
+      "nome": "Estresse",
+      "itens": [
+        "19A",
+        "19B"
+      ],
+      "direcao": "risco"
+    },
+    {
+      "id": "D20",
+      "nome": "Atenção sexual indesejada",
+      "itens": [
+        "20"
+      ],
+      "direcao": "exposicao"
+    },
+    {
+      "id": "D21",
+      "nome": "Ameaças de violência",
+      "itens": [
+        "21"
+      ],
+      "direcao": "exposicao"
+    },
+    {
+      "id": "D22",
+      "nome": "Violência física",
+      "itens": [
+        "22"
+      ],
+      "direcao": "exposicao"
+    },
+    {
+      "id": "D23",
+      "nome": "Bullying",
+      "itens": [
+        "23"
+      ],
+      "direcao": "exposicao"
+    }
+  ],
+  "dominios_validados": {
+    "situacao": "pendente",
+    "observacao": "A especificação prevê o agrupamento das 11 dimensões validadas em 7 domínios da validação brasileira, para o painel-resumo. O mapeamento não está definido e precisa ser confirmado pela responsável técnica antes de entrar no sistema.",
+    "grupos": []
+  },
+  "perguntas_abertas": {
+    "texto_antes": "As próximas perguntas são abertas e opcionais. Escreva com suas palavras. Para proteger o anonimato, não escreva nomes de pessoas.",
+    "itens": [
+      {
+        "id": "AB1",
+        "texto": "O que mais dificulta o seu trabalho hoje?",
+        "obrigatoria": false
+      },
+      {
+        "id": "AB2",
+        "texto": "O que mais contribui para o seu bem-estar no trabalho?",
+        "obrigatoria": false
+      },
+      {
+        "id": "AB3",
+        "texto": "Se você pudesse mudar uma coisa na organização do seu trabalho, o que mudaria?",
+        "obrigatoria": false
+      },
+      {
+        "id": "OBS",
+        "texto": "Nesta página você pode escrever mais sobre as suas condições de trabalho, estresse, saúde, etc.",
+        "obrigatoria": false
+      }
+    ],
+    "observacao": "Não entram na pontuação do COPSOQ. São analisadas à parte e cruzadas com o resultado quantitativo. A análise por IA só recebe texto sem identificadores."
+  },
+  "consentimento": {
+    "regras": [
+      "A participação é voluntária. Ninguém deve se sentir pressionado a participar.",
+      "O participante é anônimo. Os resultados são calculados para os grupos e as respostas de cada participante não poderão ser identificadas.",
+      "Todos os funcionários que contribuírem para a pesquisa poderão ver os resultados globais.",
+      "O local de trabalho e seus departamentos que estão sendo estudados, e não cada um dos funcionários."
+    ]
+  },
+  "regras_calculo": {
+    "formula": "pontuacao_0_100 = (media dos itens respondidos / valor_maximo da escala) * 100",
+    "valores_ja_invertidos": true,
+    "observacao_inversao": "Os valores das opções já estão na direção final no arquivo. O item 1B usa a escala frequencia_invertida: não inverter de novo.",
+    "zero_e_resposta_valida": true,
+    "minimo_proporcao_itens_respondidos": 0.5,
+    "arredondamento": {
+      "casas": 2,
+      "momento": "antes de classificar"
+    },
+    "sem_pontuacao_quando": "menos da metade dos itens da dimensão foi respondida"
+  },
+  "classificacao": {
+    "risco": {
+      "descricao": "quanto maior a pontuação, pior",
+      "faixas": [
+        {
+          "faixa": "verde",
+          "rotulo": "Favorável",
+          "ate": 33.33
+        },
+        {
+          "faixa": "amarelo",
+          "rotulo": "Atenção",
+          "de": 33.34,
+          "ate": 66.67
+        },
+        {
+          "faixa": "vermelho",
+          "rotulo": "Crítico",
+          "acima_de": 66.67
+        }
+      ]
+    },
+    "protecao": {
+      "descricao": "quanto maior a pontuação, melhor",
+      "faixas": [
+        {
+          "faixa": "verde",
+          "rotulo": "Favorável",
+          "de": 66.67
+        },
+        {
+          "faixa": "amarelo",
+          "rotulo": "Atenção",
+          "de": 33.34,
+          "ate": 66.66
+        },
+        {
+          "faixa": "vermelho",
+          "rotulo": "Crítico",
+          "ate": 33.33
+        }
+      ]
+    },
+    "exposicao": {
+      "descricao": "item a item, sem índice agregado",
+      "faixas": [
+        {
+          "faixa": "verde",
+          "rotulo": "Sem relato",
+          "valor": 0
+        },
+        {
+          "faixa": "vermelho",
+          "rotulo": "Com relato",
+          "acima_de": 0
+        }
+      ]
+    },
+    "observacao_rotulos": "As cores e os cortes fazem parte do cálculo. Os rótulos são de apresentação e podem ser renomeados sem alterar o resultado."
+  },
+  "resultados_de_grupo": {
+    "distribuicao": "percentual de respondentes em verde, amarelo e vermelho, por dimensão e por recorte. É o resultado principal.",
+    "media_do_grupo": "média das pontuações 0–100 dos respondentes, classificada pelos mesmos cortes.",
+    "exposicao": "percentual com qualquer relato, mais a frequência e a origem.",
+    "adesao": "respondentes dividido pelo total de trabalhadores do recorte."
+  },
+  "regras_de_qualidade": {
+    "alerta_adesao_abaixo_de": 50,
+    "marcar_para_revisao_respostas_identicas": true,
+    "nunca_agregar_exposicao_em_indice_unico": true,
+    "observacao_exposicao": "Comportamentos ofensivos tiveram consistência baixa na validação (alfa = 0,54): apresentar item a item, nunca como índice único."
+  },
+  "privacidade": {
+    "recorte_minimo_pessoas": 5,
+    "situacao_recorte_minimo": "a confirmar pela responsável técnica",
+    "aplica_se_a": [
+      "painel",
+      "relatórios",
+      "mapas",
+      "matriz",
+      "perguntas abertas",
+      "exportações"
+    ],
+    "resultado_geral": "sem mínimo",
+    "identidade_separada_da_resposta": true
+  }
+}

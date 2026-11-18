@@ -1,0 +1,194 @@
+{
+  "sobre": "Casos com respostas conhecidas e resultado esperado, para validar o cálculo do COPSOQ II-Br na nova plataforma. Qualquer implementação (feita por pessoa ou por IA) deve passar em todos antes de ir para um cliente real.",
+  "arquivo_de_definicao": "copsoq_ii_br.json",
+  "versao": "1.0.0",
+  "casos": [
+    {
+      "id": "C01",
+      "titulo": "Dimensão de risco no pior extremo",
+      "verifica": "Pontuação 0–100 e faixa vermelha em dimensão de risco.",
+      "tipo": "dimensao",
+      "dimensao": "D01",
+      "respostas": { "1A": 4, "1B": 4 },
+      "esperado": { "pontuacao": 100.0, "faixa": "vermelho", "itens_usados": 2, "disponivel": true }
+    },
+    {
+      "id": "C02",
+      "titulo": "Item invertido lido como está",
+      "verifica": "O item 1B usa escala invertida e não deve ser invertido de novo. Se alguém inverter duas vezes, a pontuação sai 87,50 em vez de 37,50.",
+      "tipo": "dimensao",
+      "dimensao": "D01",
+      "respostas": { "1A": 3, "1B": 0 },
+      "esperado": { "pontuacao": 37.5, "faixa": "amarelo", "itens_usados": 2, "disponivel": true }
+    },
+    {
+      "id": "C03",
+      "titulo": "Dimensão de proteção no melhor extremo",
+      "verifica": "Em proteção, pontuação alta é favorável (verde), ao contrário do risco.",
+      "tipo": "dimensao",
+      "dimensao": "D04",
+      "respostas": { "4A": 4, "4B": 4 },
+      "esperado": { "pontuacao": 100.0, "faixa": "verde", "itens_usados": 2, "disponivel": true }
+    },
+    {
+      "id": "C04",
+      "titulo": "Dimensão de proteção no pior extremo",
+      "verifica": "Proteção igual a zero é crítica (vermelho).",
+      "tipo": "dimensao",
+      "dimensao": "D04",
+      "respostas": { "4A": 0, "4B": 0 },
+      "esperado": { "pontuacao": 0.0, "faixa": "vermelho", "itens_usados": 2, "disponivel": true }
+    },
+    {
+      "id": "C05",
+      "titulo": "Limite de 66,67 em proteção, com escala de máximo 3",
+      "verifica": "Dimensão de um só item e escala cujo máximo é 3. Em proteção, 66,67 é verde.",
+      "tipo": "dimensao",
+      "dimensao": "D13",
+      "respostas": { "13": 2 },
+      "esperado": { "pontuacao": 66.67, "faixa": "verde", "itens_usados": 1, "disponivel": true }
+    },
+    {
+      "id": "C06",
+      "titulo": "Limite de 66,67 em risco",
+      "verifica": "O mesmo valor que é verde em proteção é amarelo em risco. Mostra que a direção da dimensão decide a cor.",
+      "tipo": "dimensao",
+      "dimensao": "D14",
+      "respostas": { "14A": 2, "14B": 2 },
+      "esperado": { "pontuacao": 66.67, "faixa": "amarelo", "itens_usados": 2, "disponivel": true }
+    },
+    {
+      "id": "C07",
+      "titulo": "Metade dos itens respondidos",
+      "verifica": "Com metade dos itens respondidos a dimensão é calculada, usando só o que foi respondido.",
+      "tipo": "dimensao",
+      "dimensao": "D02",
+      "respostas": { "2A": 4 },
+      "esperado": { "pontuacao": 100.0, "faixa": "vermelho", "itens_usados": 1, "disponivel": true }
+    },
+    {
+      "id": "C08",
+      "titulo": "Nenhum item respondido",
+      "verifica": "Sem resposta não há pontuação nem cor. Nunca tratar ausência como zero ou como valor do meio.",
+      "tipo": "dimensao",
+      "dimensao": "D17",
+      "respostas": {},
+      "esperado": { "pontuacao": null, "faixa": null, "itens_usados": 0, "disponivel": false }
+    },
+    {
+      "id": "C09",
+      "titulo": "Zero é resposta válida",
+      "verifica": "Respostas zero em dimensão de risco produzem pontuação 0 e cor verde, não indisponível.",
+      "tipo": "dimensao",
+      "dimensao": "D19",
+      "respostas": { "19A": 0, "19B": 0 },
+      "esperado": { "pontuacao": 0.0, "faixa": "verde", "itens_usados": 2, "disponivel": true }
+    },
+    {
+      "id": "C10",
+      "titulo": "Exposição sem relato",
+      "verifica": "Resposta “Não” em item de exposição é sem relato.",
+      "tipo": "exposicao",
+      "item": "20",
+      "resposta": 0,
+      "origens": [],
+      "esperado": { "faixa": "verde", "relato": false }
+    },
+    {
+      "id": "C11",
+      "titulo": "Exposição com relato e origem",
+      "verifica": "Qualquer frequência diferente de “Não” conta como relato, inclusive a mais baixa, e a origem é preservada.",
+      "tipo": "exposicao",
+      "item": "23",
+      "resposta": 2,
+      "origens": ["Subordinados"],
+      "esperado": { "faixa": "vermelho", "relato": true, "origens": ["Subordinados"] }
+    },
+    {
+      "id": "C12",
+      "titulo": "Resultado de grupo com cinco respondentes",
+      "verifica": "Distribuição por faixa e média do grupo, classificada pelos mesmos cortes.",
+      "tipo": "grupo",
+      "dimensao": "D01",
+      "recorte_minimo": 5,
+      "respondentes": [
+        { "1A": 4, "1B": 4 },
+        { "1A": 3, "1B": 3 },
+        { "1A": 2, "1B": 2 },
+        { "1A": 1, "1B": 1 },
+        { "1A": 0, "1B": 0 }
+      ],
+      "esperado": {
+        "protegido": false,
+        "n": 5,
+        "media": 50.0,
+        "faixa_media": "amarelo",
+        "distribuicao": { "verde": 40.0, "amarelo": 20.0, "vermelho": 40.0 }
+      }
+    },
+    {
+      "id": "C13",
+      "titulo": "Recorte com menos de cinco pessoas",
+      "verifica": "Recorte filtrado abaixo do mínimo não mostra resultado, nem na tela nem na exportação.",
+      "tipo": "grupo",
+      "dimensao": "D01",
+      "recorte_minimo": 5,
+      "respondentes": [
+        { "1A": 4, "1B": 4 },
+        { "1A": 3, "1B": 3 },
+        { "1A": 2, "1B": 2 },
+        { "1A": 1, "1B": 1 }
+      ],
+      "esperado": { "protegido": true, "n": 4, "media": null, "distribuicao": null }
+    },
+    {
+      "id": "C14",
+      "titulo": "Alerta de adesão baixa",
+      "verifica": "Adesão abaixo de 50% gera alerta de cautela no relatório.",
+      "tipo": "adesao",
+      "respondentes": 9,
+      "trabalhadores": 20,
+      "esperado": { "adesao": 45.0, "alerta": true }
+    },
+    {
+      "id": "C15",
+      "titulo": "Adesão suficiente",
+      "verifica": "Adesão de 50% ou mais não gera alerta.",
+      "tipo": "adesao",
+      "respondentes": 10,
+      "trabalhadores": 20,
+      "esperado": { "adesao": 50.0, "alerta": false }
+    },
+    {
+      "id": "C16",
+      "titulo": "Respostas idênticas em todos os itens",
+      "verifica": "O questionário é marcado para revisão humana, nunca excluído automaticamente.",
+      "tipo": "qualidade",
+      "respostas_todos_itens": 4,
+      "esperado": { "marcar_para_revisao": true, "excluido_automaticamente": false }
+    },
+    {
+      "id": "C17",
+      "titulo": "Exposição nunca vira índice único",
+      "verifica": "As quatro dimensões de exposição existem separadas e nenhuma dimensão soma mais de um item de exposição. A validação brasileira encontrou consistência baixa (alfa = 0,54) nesse bloco.",
+      "tipo": "estrutura",
+      "esperado": {
+        "dimensoes_exposicao": ["D20", "D21", "D22", "D23"],
+        "itens_por_dimensao_exposicao": 1
+      }
+    },
+    {
+      "id": "C18",
+      "titulo": "Integridade do arquivo de definição",
+      "verifica": "Todo item pertence a alguma dimensão, toda dimensão tem itens existentes, e toda escala citada existe.",
+      "tipo": "estrutura",
+      "esperado": {
+        "total_itens": 40,
+        "total_dimensoes": 23,
+        "itens_orfaos": 0,
+        "dimensoes_com_item_inexistente": 0,
+        "escalas_inexistentes": 0
+      }
+    }
+  ]
+}
