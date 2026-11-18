@@ -7,7 +7,11 @@
     "fonte": "Versão brasileira curta do COPSOQ II (validação brasileira, UFSCar, 2019). Conferir o texto de cada item contra a publicação oficial antes de usar com clientes.",
     "cortes_de_referencia": "Manual COPSOQ II — Versão Portuguesa: tercis 2,33 e 3,66 na escala 1–5, equivalentes a 33,33 e 66,67 na escala 0–100.",
     "total_itens": 40,
-    "total_dimensoes": 23
+    "total_dimensoes": 23,
+    "estruturas": {
+      "aplicacao": "23 dimensões da versão curta internacional (Kristensen et al., 2005), como no estudo de aplicação da própria tese.",
+      "validada_brasil": "11 dimensões em 7 domínios (Gonçalves, 2019)."
+    }
   },
   "escala_resultado": {
     "minimo": 0,
@@ -669,9 +673,58 @@
     }
   ],
   "dominios_validados": {
-    "situacao": "pendente",
-    "observacao": "A especificação prevê o agrupamento das 11 dimensões validadas em 7 domínios da validação brasileira, para o painel-resumo. O mapeamento não está definido e precisa ser confirmado pela responsável técnica antes de entrar no sistema.",
-    "grupos": []
+    "situacao": "definido",
+    "fonte": "Gonçalves JS. Os aspectos psicossociais no trabalho. Tese de doutorado, Programa de Pós-Graduação em Fisioterapia, UFSCar, São Carlos, 2019. Tabela 2 (análise fatorial exploratória por domínio, n=211) e Tabela 3 (consistência interna por dimensão).",
+    "o_que_e": "A validação brasileira agrupou os mesmos 40 itens em 11 dimensões, distribuídas em 7 domínios. Cada dimensão validada é a união exata de dimensões da versão curta internacional, de modo que as duas estruturas convivem: item, 23 dimensões, 11 dimensões validadas, 7 domínios.",
+    "regra_de_apresentacao": "O domínio é título de agrupamento e não recebe pontuação própria. Em \"Saúde e bem-estar\" e em \"Interface trabalho-indivíduo\" a análise fatorial encontrou dois fatores distintos: somá-los contraria o que o estudo achou. A pontuação agregada é legítima no nível da dimensão validada, que tem consistência interna publicada.",
+    "grupos": [
+      {
+        "nome": "Demandas no trabalho",
+        "dimensoes_validadas": [
+          "V01"
+        ]
+      },
+      {
+        "nome": "Organização e conteúdo do trabalho",
+        "dimensoes_validadas": [
+          "V02",
+          "V03"
+        ]
+      },
+      {
+        "nome": "Relações interpessoais e liderança",
+        "dimensoes_validadas": [
+          "V04",
+          "V05"
+        ]
+      },
+      {
+        "nome": "Interface trabalho-indivíduo",
+        "dimensoes_validadas": [
+          "V06",
+          "V07"
+        ]
+      },
+      {
+        "nome": "Valores no local de trabalho",
+        "dimensoes_validadas": [
+          "V08"
+        ]
+      },
+      {
+        "nome": "Saúde e bem-estar",
+        "dimensoes_validadas": [
+          "V09",
+          "V10"
+        ]
+      },
+      {
+        "nome": "Comportamentos ofensivos",
+        "dimensoes_validadas": [
+          "V11"
+        ]
+      }
+    ]
   },
   "perguntas_abertas": {
     "texto_antes": "As próximas perguntas são abertas e opcionais. Escreva com suas palavras. Para proteger o anonimato, não escreva nomes de pessoas.",
@@ -717,7 +770,8 @@
       "casas": 2,
       "momento": "antes de classificar"
     },
-    "sem_pontuacao_quando": "menos da metade dos itens da dimensão foi respondida"
+    "sem_pontuacao_quando": "menos da metade dos itens da dimensão foi respondida",
+    "observacao_pontuacao_na_tese": "A tese pontua cada dimensão pela soma dos itens, com amplitudes diferentes conforme o número de questões (0 a 24, 0 a 16, 0 a 6, 0 a 4, 0 a 3). A escala de 0 a 100 adotada aqui vem do manual português (Silva et al.), de onde também vêm os tercis. A conversão é direta e preserva a ordem; a metodologia do relatório deve declarar qual escala é usada."
   },
   "classificacao": {
     "risco": {
@@ -804,5 +858,249 @@
     ],
     "resultado_geral": "sem mínimo",
     "identidade_separada_da_resposta": true
-  }
+  },
+  "dimensoes_validadas": [
+    {
+      "id": "V01",
+      "nome": "Demandas no trabalho",
+      "dominio": "Demandas no trabalho",
+      "direcao": "risco",
+      "itens": [
+        "1A",
+        "1B",
+        "2A",
+        "2B",
+        "3A",
+        "3B"
+      ],
+      "dimensoes_equivalentes": [
+        "D01",
+        "D02",
+        "D03"
+      ],
+      "alfa_cronbach": 0.76,
+      "amplitude_soma_na_tese": [
+        0,
+        24
+      ],
+      "pontuacao_agregada": true
+    },
+    {
+      "id": "V02",
+      "nome": "Influência e desenvolvimento",
+      "dominio": "Organização e conteúdo do trabalho",
+      "direcao": "protecao",
+      "itens": [
+        "4A",
+        "4B",
+        "5A",
+        "5B"
+      ],
+      "dimensoes_equivalentes": [
+        "D04",
+        "D05"
+      ],
+      "alfa_cronbach": 0.7,
+      "amplitude_soma_na_tese": [
+        0,
+        16
+      ],
+      "pontuacao_agregada": true
+    },
+    {
+      "id": "V03",
+      "nome": "Significado e compromisso",
+      "dominio": "Organização e conteúdo do trabalho",
+      "direcao": "protecao",
+      "itens": [
+        "6A",
+        "6B",
+        "7A",
+        "7B"
+      ],
+      "dimensoes_equivalentes": [
+        "D06",
+        "D07"
+      ],
+      "alfa_cronbach": 0.75,
+      "amplitude_soma_na_tese": [
+        0,
+        16
+      ],
+      "pontuacao_agregada": true
+    },
+    {
+      "id": "V04",
+      "nome": "Relações interpessoais",
+      "dominio": "Relações interpessoais e liderança",
+      "direcao": "protecao",
+      "itens": [
+        "8A",
+        "8B",
+        "9A",
+        "9B",
+        "10A",
+        "10B"
+      ],
+      "dimensoes_equivalentes": [
+        "D08",
+        "D09",
+        "D10"
+      ],
+      "alfa_cronbach": 0.86,
+      "amplitude_soma_na_tese": [
+        0,
+        24
+      ],
+      "pontuacao_agregada": true
+    },
+    {
+      "id": "V05",
+      "nome": "Liderança",
+      "dominio": "Relações interpessoais e liderança",
+      "direcao": "protecao",
+      "itens": [
+        "11A",
+        "11B",
+        "12A",
+        "12B"
+      ],
+      "dimensoes_equivalentes": [
+        "D11",
+        "D12"
+      ],
+      "alfa_cronbach": 0.87,
+      "amplitude_soma_na_tese": [
+        0,
+        16
+      ],
+      "pontuacao_agregada": true
+    },
+    {
+      "id": "V06",
+      "nome": "Satisfação no trabalho",
+      "dominio": "Interface trabalho-indivíduo",
+      "direcao": "protecao",
+      "itens": [
+        "13"
+      ],
+      "dimensoes_equivalentes": [
+        "D13"
+      ],
+      "alfa_cronbach": null,
+      "amplitude_soma_na_tese": [
+        0,
+        3
+      ],
+      "pontuacao_agregada": true,
+      "observacao": "Dimensão de um único item: não há alfa de Cronbach."
+    },
+    {
+      "id": "V07",
+      "nome": "Conflitos família e trabalho",
+      "dominio": "Interface trabalho-indivíduo",
+      "direcao": "risco",
+      "itens": [
+        "14A",
+        "14B"
+      ],
+      "dimensoes_equivalentes": [
+        "D14"
+      ],
+      "alfa_cronbach": 0.86,
+      "amplitude_soma_na_tese": [
+        0,
+        6
+      ],
+      "pontuacao_agregada": true
+    },
+    {
+      "id": "V08",
+      "nome": "Valores no local de trabalho",
+      "dominio": "Valores no local de trabalho",
+      "direcao": "protecao",
+      "itens": [
+        "15A",
+        "15B",
+        "16A",
+        "16B"
+      ],
+      "dimensoes_equivalentes": [
+        "D15",
+        "D16"
+      ],
+      "alfa_cronbach": 0.85,
+      "amplitude_soma_na_tese": [
+        0,
+        16
+      ],
+      "pontuacao_agregada": true
+    },
+    {
+      "id": "V09",
+      "nome": "Saúde geral",
+      "dominio": "Saúde e bem-estar",
+      "direcao": "protecao",
+      "itens": [
+        "17"
+      ],
+      "dimensoes_equivalentes": [
+        "D17"
+      ],
+      "alfa_cronbach": null,
+      "amplitude_soma_na_tese": [
+        0,
+        4
+      ],
+      "pontuacao_agregada": true,
+      "observacao": "Dimensão de um único item: não há alfa de Cronbach."
+    },
+    {
+      "id": "V10",
+      "nome": "Burnout e estresse",
+      "dominio": "Saúde e bem-estar",
+      "direcao": "risco",
+      "itens": [
+        "18A",
+        "18B",
+        "19A",
+        "19B"
+      ],
+      "dimensoes_equivalentes": [
+        "D18",
+        "D19"
+      ],
+      "alfa_cronbach": 0.87,
+      "amplitude_soma_na_tese": [
+        0,
+        16
+      ],
+      "pontuacao_agregada": true
+    },
+    {
+      "id": "V11",
+      "nome": "Comportamentos ofensivos",
+      "dominio": "Comportamentos ofensivos",
+      "direcao": "exposicao",
+      "itens": [
+        "20",
+        "21",
+        "22",
+        "23"
+      ],
+      "dimensoes_equivalentes": [
+        "D20",
+        "D21",
+        "D22",
+        "D23"
+      ],
+      "alfa_cronbach": 0.54,
+      "amplitude_soma_na_tese": [
+        0,
+        4
+      ],
+      "pontuacao_agregada": false,
+      "observacao": "Nunca apresentar como pontuação única. Consistência interna baixa (alfa = 0,54) e a própria tese registra que este domínio não é pontuado por soma como os demais. Apresentar os quatro itens separados, com frequência e origem."
+    }
+  ]
 }

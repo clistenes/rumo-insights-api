@@ -36,30 +36,51 @@ def carregar(nome):
 
 # ----------------------------------------------------------------- motor
 
-def pontuacao_dimensao(definicao, dimensao_id, respostas):
-    """Pontuação 0–100 de uma dimensão para uma pessoa."""
-    dim = next(d for d in definicao['dimensoes'] if d['id'] == dimensao_id)
+def _pontuacao(definicao, itens_ids, direcao, respostas):
+    """Núcleo do cálculo: vale para as 23 dimensões e para as 11 validadas."""
     itens = {i['id']: i for i in definicao['itens']}
-    total = len(dim['itens'])
-    proporcoes = []
-    for item_id in dim['itens']:
+    total = len(itens_ids)
+    proporcoes, soma = [], 0
+    for item_id in itens_ids:
         valor = respostas.get(item_id)
         if valor is None:
             continue
-        maximo = itens[item_id]['valor_maximo']
-        proporcoes.append(valor / maximo)
+        soma += valor
+        proporcoes.append(valor / itens[item_id]['valor_maximo'])
 
     usados = len(proporcoes)
     minimo = definicao['regras_calculo']['minimo_proporcao_itens_respondidos']
     if total == 0 or usados / total < minimo:
-        return {'pontuacao': None, 'faixa': None, 'rotulo': None,
+        return {'pontuacao': None, 'faixa': None, 'rotulo': None, 'soma': None,
                 'itens_usados': usados, 'itens_total': total, 'disponivel': False}
 
     casas = definicao['escala_resultado']['casas_decimais']
     pontuacao = round(sum(proporcoes) / usados * 100, casas)
-    faixa, rotulo = classificar(definicao, dim['direcao'], pontuacao)
-    return {'pontuacao': pontuacao, 'faixa': faixa, 'rotulo': rotulo,
+    faixa, rotulo = classificar(definicao, direcao, pontuacao)
+    return {'pontuacao': pontuacao, 'faixa': faixa, 'rotulo': rotulo, 'soma': soma,
             'itens_usados': usados, 'itens_total': total, 'disponivel': True}
+
+
+def pontuacao_dimensao(definicao, dimensao_id, respostas):
+    """Pontuação 0–100 de uma das 23 dimensões, para uma pessoa."""
+    dim = next(d for d in definicao['dimensoes'] if d['id'] == dimensao_id)
+    return _pontuacao(definicao, dim['itens'], dim['direcao'], respostas)
+
+
+def pontuacao_validada(definicao, validada_id, respostas):
+    """Pontuação de uma das 11 dimensões da validação brasileira.
+
+    `soma` é a pontuação na escala da tese (soma dos itens); `pontuacao` é a
+    mesma coisa na escala de 0 a 100. Comportamentos ofensivos nunca é agregado.
+    """
+    v = next(x for x in definicao['dimensoes_validadas'] if x['id'] == validada_id)
+    if not v.get('pontuacao_agregada', True):
+        return {'pontuacao': None, 'faixa': None, 'rotulo': None, 'soma': None,
+                'itens_usados': 0, 'itens_total': len(v['itens']), 'disponivel': False,
+                'motivo': 'pontuacao_agregada_nao_permitida'}
+    r = _pontuacao(definicao, v['itens'], v['direcao'], respostas)
+    r['dominio'] = v['dominio']
+    return r
 
 
 def classificar(definicao, direcao, pontuacao):
@@ -177,6 +198,8 @@ def executa(definicao, caso):
     tipo = caso['tipo']
     if tipo == 'dimensao':
         return pontuacao_dimensao(definicao, caso['dimensao'], caso['respostas'])
+    if tipo == 'dimensao_validada':
+        return pontuacao_validada(definicao, caso['dimensao_validada'], caso['respostas'])
     if tipo == 'exposicao':
         return exposicao_item(definicao, caso['item'], caso['resposta'], caso.get('origens'))
     if tipo == 'grupo':
@@ -196,9 +219,20 @@ def executa(definicao, caso):
         inexistentes = [d['id'] for d in definicao['dimensoes']
                         if any(i not in itens for i in d['itens'])]
         sem_escala = [i['id'] for i in definicao['itens'] if i['escala'] not in escalas]
+        val = definicao.get('dimensoes_validadas', [])
+        dm = {x['id']: x for x in definicao['dimensoes']}
+        unioes_ok = all(
+            sorted(i for e in v['dimensoes_equivalentes'] for i in dm[e]['itens']) == sorted(v['itens'])
+            for v in val)
         return {
             'total_itens': len(itens),
             'total_dimensoes': len(definicao['dimensoes']),
+            'total_dimensoes_validadas': len(val),
+            'total_dominios': len(definicao.get('dominios_validados', {}).get('grupos', [])),
+            'unioes_exatas': unioes_ok,
+            'validadas_sem_pontuacao_agregada': [v['id'] for v in val
+                                                 if not v.get('pontuacao_agregada', True)],
+            'dominios_com_pontuacao_propria': 0,
             'dimensoes_exposicao': [d['id'] for d in exposicao],
             'itens_por_dimensao_exposicao': max(len(d['itens']) for d in exposicao),
             'itens_orfaos': len(orfaos),

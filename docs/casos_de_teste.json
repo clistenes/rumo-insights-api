@@ -178,6 +178,33 @@
       }
     },
     {
+      "id": "C19",
+      "titulo": "Dimensão validada: Burnout e estresse",
+      "verifica": "As 11 dimensões da validação brasileira usam o mesmo cálculo. Aqui a soma dá 10 de 0 a 16, equivalente a 62,50 na escala de 0 a 100. É a dimensão que permite apresentar esgotamento e estresse juntos, com alfa de 0,87 publicado.",
+      "tipo": "dimensao_validada",
+      "dimensao_validada": "V10",
+      "respostas": { "18A": 3, "18B": 3, "19A": 2, "19B": 2 },
+      "esperado": { "pontuacao": 62.5, "faixa": "amarelo", "soma": 10, "itens_usados": 4, "disponivel": true, "dominio": "Saúde e bem-estar" }
+    },
+    {
+      "id": "C20",
+      "titulo": "Dimensão validada: Demandas no trabalho",
+      "verifica": "Reúne os seis itens que, na versão curta internacional, formam três dimensões separadas. No pior extremo, soma 24 de 0 a 24.",
+      "tipo": "dimensao_validada",
+      "dimensao_validada": "V01",
+      "respostas": { "1A": 4, "1B": 4, "2A": 4, "2B": 4, "3A": 4, "3B": 4 },
+      "esperado": { "pontuacao": 100.0, "faixa": "vermelho", "soma": 24, "itens_usados": 6, "disponivel": true }
+    },
+    {
+      "id": "C21",
+      "titulo": "Comportamentos ofensivos nunca recebe pontuação agregada",
+      "verifica": "É dimensão validada, mas com consistência interna baixa (alfa = 0,54). O sistema deve recusar a pontuação única mesmo com todos os itens respondidos.",
+      "tipo": "dimensao_validada",
+      "dimensao_validada": "V11",
+      "respostas": { "20": 0, "21": 2, "22": 0, "23": 3 },
+      "esperado": { "pontuacao": null, "soma": null, "disponivel": false, "motivo": "pontuacao_agregada_nao_permitida" }
+    },
+    {
       "id": "C18",
       "titulo": "Integridade do arquivo de definição",
       "verifica": "Todo item pertence a alguma dimensão, toda dimensão tem itens existentes, e toda escala citada existe.",
@@ -185,6 +212,11 @@
       "esperado": {
         "total_itens": 40,
         "total_dimensoes": 23,
+        "total_dimensoes_validadas": 11,
+        "total_dominios": 7,
+        "unioes_exatas": true,
+        "validadas_sem_pontuacao_agregada": ["V11"],
+        "dominios_com_pontuacao_propria": 0,
         "itens_orfaos": 0,
         "dimensoes_com_item_inexistente": 0,
         "escalas_inexistentes": 0
